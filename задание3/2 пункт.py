@@ -1,7 +1,13 @@
 x=[]
 for i in range(10):
-    print('Введите', i+1, 'элемент:')
-    x.append(int(input()))
+    f1 = True
+    while f1:
+        try:
+            n=int(input(f'Введите {i+1} элемент:'))
+            x.append(n)
+            f1 = False
+        except ValueError:
+            print('Введите целое число!')
 print('Маcсив х:', x)
 un_x=[]
 for c in x:
