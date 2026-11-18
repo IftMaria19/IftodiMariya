@@ -14,13 +14,10 @@
 >>> stats = summarize(data)
 >>> sma = simple_moving_average(data, 3)
 """
-from generator import random_series, sine_series, trend_series
-from stats import mean, median, spread, summarize
-from moving_average import (
-simple_moving_average,
-centered_moving_average,
-exponential_moving_average,
-)
+from num_series.generator import random_series, sine_series, trend_series
+from num_series.stats import mean, median, spread, summarize
+from num_series.moving_average import (
+simple_moving_average, centered_moving_average, exponential_moving_average)
 __all__ = [
 # генерация
 "random_series", "sine_series", "trend_series",
