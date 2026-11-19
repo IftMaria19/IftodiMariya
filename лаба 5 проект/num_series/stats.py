@@ -34,6 +34,12 @@ def summarize(data: Sequence[float]) -> Dict[str, float]:
         'max': float(max(data)),
     }
 
+def count_signs(data: list[float]) -> dict:
+    """Считает количество отрицательных, нулевых и положительных значений."""
+    neg = sum(1 for x in data if x < 0)
+    zero = sum(1 for x in data if x == 0)
+    pos = sum(1 for x in data if x > 0)
+    return {"negative": neg, "zero": zero, "positive": pos}
 
 
     

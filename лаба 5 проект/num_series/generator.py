@@ -18,15 +18,15 @@ import random
 from typing import List, Optional
 
 def random_series(n: int,
-                  low: float = -100.0,
-                  high: float = 100.0,
+                  low: float = -50.0,
+                  high: float = 50.0,
                   seed: Optional[int] = None) -> List[float]:
     """Ряд из n равномерно распределённых случайных чисел на [low, high]."""
     _validate_n(n)
     if low >= high:
         raise ValueError (f'low должно быть меньше high (получено: {low} >= {high})')
     rng = random.Random(seed)
-    return [rng.uniform(low, high) for _ in range(n)]
+    return [rng.randint(low, high) for _ in range(n)]
 
 def sine_series(n: int,
                 amplitude: float = 1.0,
@@ -51,6 +51,8 @@ def trend_series(n: int,
     rng = random.Random(seed)
     return [start + step * i + (rng.uniform(-noise, noise) if noise else 0.0)
     for i in range(n)]
+
+
 
 
 
